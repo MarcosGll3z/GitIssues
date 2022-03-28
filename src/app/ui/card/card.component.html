@@ -1,0 +1,13 @@
+<div class="is-card p-2 mt-2">
+   <div class="is-card-header is-flex is-align-items-c">
+         <img class="is-card-avatar mr-2" alt="User Picture" [src]=issue.user.avatar_url>
+         <div>
+            <div class="is-card-title">{{issue.user.login}}</div>
+            <div class="is-card-subtitle">{{issue.user.html_url}}</div>
+         </div>
+   </div>
+   <div class="is-card-body mt-2">
+      <p><strong>Titulo: </strong>{{issue.title}}</p>
+      <p><strong>Url: </strong>{{issue.html_url}}</p>
+   </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="is-container">
+    <div class="is-flex is-align-center is-flex-dir-column">
+        <div class="mt-5">
+            <img src="/assets/img/logoGitHub.png" alt="" width="150px">
+        </div>
+        <app-searchinput (onDebounce)="handleDebounce( $event )"></app-searchinput>
+    </div>
+    <div class="p-5">
+        <div *ngFor="let el of arrIssues">
+            <a [href]="el.html_url">
+                <app-card [issue]="el"></app-card>
+            </a>
+        </div>
+    </div>
+</div>

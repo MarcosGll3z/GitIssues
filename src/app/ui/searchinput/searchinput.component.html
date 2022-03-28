@@ -1,0 +1,12 @@
+<form [formGroup]="searchForm">
+    <div class="is-control is-flex .is-align-center">
+        <span class="material-icons">
+            search
+        </span>
+        <input class="is-input-main is-black font-size-3 letter-spacing-1" 
+            type="text"
+            placeholder="Search issues.."
+            formControlName="query"
+            (input)="handleKey( $event )"/>
+    </div>
+</form>

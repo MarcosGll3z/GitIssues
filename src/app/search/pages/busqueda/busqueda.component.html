@@ -6,6 +6,9 @@
         <app-searchinput (onDebounce)="handleDebounce( $event )"></app-searchinput>
     </div>
     <div class="p-5">
+        <div *ngIf="handlerError">
+            No se encontro ningun issues permitido
+        </div>
         <div *ngFor="let el of arrIssues">
             <a [href]="el.html_url">
                 <app-card [issue]="el"></app-card>

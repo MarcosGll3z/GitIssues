@@ -9,6 +9,7 @@ import { SearchService } from '../../services/search.service';
 })
 export class BusquedaComponent implements OnInit {
   arrIssues: any = []
+  handlerError = false;
 
   constructor(
     private ss: SearchService,
@@ -20,6 +21,13 @@ export class BusquedaComponent implements OnInit {
   handleDebounce(event: any){
     this.ss.getIssues(event).subscribe( ({items}) => {
       this.arrIssues = items
+      this.handlerError = false;
+      
+    }, ({ok}) => {
+      if (!ok) {
+        this.handlerError = true;
+        this.arrIssues = [];
+      }
     })
   }
 }

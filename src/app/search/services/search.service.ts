@@ -13,7 +13,7 @@ export class SearchService {
   ) { }
 
   getIssues(query: string): Observable<any>{
-    const url = `${this.baseUrl}/search/issues?q=${query} type:issue`;
+    const url = `${this.baseUrl}/search/issues?q=${query} type:issue in:title in:body user:${query} org:${query}`;
     return this.http.get<any>(url)
   }
 }
